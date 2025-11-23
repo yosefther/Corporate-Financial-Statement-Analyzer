@@ -41,13 +41,16 @@ namespace Corporate_Financial_Statement_Analyzer
             this._incomeStatmentSave = new System.Windows.Forms.Button();
             this._BalanceSheetSave = new System.Windows.Forms.Button();
             this._CashFlowSave = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 89);
+            this.label1.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            this.label1.Location = new System.Drawing.Point(215, 124);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 0;
@@ -57,7 +60,7 @@ namespace Corporate_Financial_Statement_Analyzer
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 262);
+            this.label2.Location = new System.Drawing.Point(215, 297);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 1;
@@ -66,7 +69,7 @@ namespace Corporate_Financial_Statement_Analyzer
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 182);
+            this.label3.Location = new System.Drawing.Point(215, 216);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 13);
             this.label3.TabIndex = 2;
@@ -75,7 +78,7 @@ namespace Corporate_Financial_Statement_Analyzer
             // 
             // _IncomStatmentCSV
             // 
-            this._IncomStatmentCSV.Location = new System.Drawing.Point(126, 84);
+            this._IncomStatmentCSV.Location = new System.Drawing.Point(304, 119);
             this._IncomStatmentCSV.Name = "_IncomStatmentCSV";
             this._IncomStatmentCSV.Size = new System.Drawing.Size(75, 23);
             this._IncomStatmentCSV.TabIndex = 3;
@@ -85,7 +88,7 @@ namespace Corporate_Financial_Statement_Analyzer
             // 
             // _BalancSheetCSV
             // 
-            this._BalancSheetCSV.Location = new System.Drawing.Point(126, 177);
+            this._BalancSheetCSV.Location = new System.Drawing.Point(304, 211);
             this._BalancSheetCSV.Name = "_BalancSheetCSV";
             this._BalancSheetCSV.Size = new System.Drawing.Size(75, 23);
             this._BalancSheetCSV.TabIndex = 4;
@@ -95,7 +98,7 @@ namespace Corporate_Financial_Statement_Analyzer
             // 
             // _CashFlowCSV
             // 
-            this._CashFlowCSV.Location = new System.Drawing.Point(126, 257);
+            this._CashFlowCSV.Location = new System.Drawing.Point(304, 292);
             this._CashFlowCSV.Name = "_CashFlowCSV";
             this._CashFlowCSV.Size = new System.Drawing.Size(75, 23);
             this._CashFlowCSV.TabIndex = 5;
@@ -109,25 +112,37 @@ namespace Corporate_Financial_Statement_Analyzer
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(381, 12);
+            this.dataGridView1.AllowUserToAddRows = true;
+            this.dataGridView1.AllowUserToDeleteRows = true;
+            this.dataGridView1.AllowUserToResizeRows = true;
+            this.dataGridView1.ReadOnly = false;
+
+            dataGridView1.RowTemplate.MinimumHeight = 20;
+            dataGridView1.RowTemplate.Height = 30;
+            dataGridView1.RowTemplate.Resizable = DataGridViewTriState.True;
+
+            this.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.RowsDefaultCellStyle.WrapMode = DataGridViewTriState.True;
+
+            this.dataGridView1.Location = new System.Drawing.Point(487, 12);
+            this.dataGridView1.Size = new System.Drawing.Size(301, 426);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(407, 426);
             this.dataGridView1.TabIndex = 6;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+
             // 
             // _incomeStatmentSave
             // 
-            this._incomeStatmentSave.Location = new System.Drawing.Point(207, 84);
+            this._incomeStatmentSave.Location = new System.Drawing.Point(385, 119);
             this._incomeStatmentSave.Name = "_incomeStatmentSave";
             this._incomeStatmentSave.Size = new System.Drawing.Size(75, 23);
             this._incomeStatmentSave.TabIndex = 7;
             this._incomeStatmentSave.Text = "save";
             this._incomeStatmentSave.UseVisualStyleBackColor = true;
+            this._incomeStatmentSave.Click += new System.EventHandler(this._incomeStatmentSave_Click);
             // 
             // _BalanceSheetSave
             // 
-            this._BalanceSheetSave.Location = new System.Drawing.Point(207, 177);
+            this._BalanceSheetSave.Location = new System.Drawing.Point(385, 211);
             this._BalanceSheetSave.Name = "_BalanceSheetSave";
             this._BalanceSheetSave.Size = new System.Drawing.Size(75, 23);
             this._BalanceSheetSave.TabIndex = 8;
@@ -136,18 +151,30 @@ namespace Corporate_Financial_Statement_Analyzer
             // 
             // _CashFlowSave
             // 
-            this._CashFlowSave.Location = new System.Drawing.Point(207, 257);
+            this._CashFlowSave.Location = new System.Drawing.Point(385, 292);
             this._CashFlowSave.Name = "_CashFlowSave";
             this._CashFlowSave.Size = new System.Drawing.Size(75, 23);
             this._CashFlowSave.TabIndex = 9;
             this._CashFlowSave.Text = "save";
             this._CashFlowSave.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.Location = new System.Drawing.Point(-2, -14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(193, 482);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this._CashFlowSave);
             this.Controls.Add(this._BalanceSheetSave);
             this.Controls.Add(this._incomeStatmentSave);
@@ -162,6 +189,7 @@ namespace Corporate_Financial_Statement_Analyzer
             this.Text = "Data import & integration";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,6 +208,7 @@ namespace Corporate_Financial_Statement_Analyzer
         private System.Windows.Forms.Button _incomeStatmentSave;
         private System.Windows.Forms.Button _BalanceSheetSave;
         private System.Windows.Forms.Button _CashFlowSave;
+        private PictureBox pictureBox1;
     }
 }
 
