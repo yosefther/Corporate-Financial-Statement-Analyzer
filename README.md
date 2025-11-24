@@ -2,7 +2,7 @@
 TODO 
 - [ ] add CsvHelper (load + save, with proper CSV escaping)
 - [ ] Drag and drop functionality to the tables
-
+- [ ] Add Yahoo Finance API Clients 
 Income Statement:
 Revenue
 Gross Profit
