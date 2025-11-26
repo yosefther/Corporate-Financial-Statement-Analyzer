@@ -14,22 +14,44 @@ namespace Corporate_Financial_Statement_Analyzer
     
         public static DataTable GetDataTableFromCSV(string path)
         {
-            DataTable dt = new DataTable();
-            using(StreamReader sr = new StreamReader(path))
+            try
             {
-                string[] headers = sr.ReadLine().Split(',');
-                foreach (string header in headers)
+                DataTable dt = new DataTable();
+                using (StreamReader sr = new StreamReader(path))
                 {
-                    dt.Columns.Add(header);
+                    string[] headers = sr.ReadLine().Split(',');
+                    foreach (string header in headers)
+                    {
+                        dt.Columns.Add(header);
+                    }
+                    while (!sr.EndOfStream)
+                    {
+                        string[] rows = sr.ReadLine().Split(',');
+                        dt.Rows.Add(rows);
+                    }
                 }
-                while (!sr.EndOfStream)
-                {
-                    string[] rows = sr.ReadLine().Split(',');
-                    dt.Rows.Add(rows);
-                }
+                return dt;
             }
-                    return dt;
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading CSV file: " + ex.Message);
+                return null;
+            }
         }
+        public DataTable buttonClick_LoadCSV()
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            DataTable dt = new DataTable();
+            ofd.Title = "Select a file";
+            ofd.Filter = "CSV Files (*.csv)|*.csv|All Files (*.*)|*.*";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                string FilePath = ofd.FileName;
+                dt = CSVLoader.GetDataTableFromCSV(FilePath);
+            }
+            return dt;
+        }
+
 
         public static void SaveDataGridViewToCSV(string path)
         {
@@ -38,6 +60,8 @@ namespace Corporate_Financial_Statement_Analyzer
                 //add to the save button 
             }
         }
+
+
 
     }
 
