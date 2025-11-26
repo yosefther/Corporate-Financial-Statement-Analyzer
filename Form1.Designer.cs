@@ -30,6 +30,7 @@ namespace Corporate_Financial_Statement_Analyzer
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -104,6 +105,7 @@ namespace Corporate_Financial_Statement_Analyzer
             this._CashFlowCSV.TabIndex = 5;
             this._CashFlowCSV.Text = "File.csv";
             this._CashFlowCSV.UseVisualStyleBackColor = true;
+            this._CashFlowCSV.Click += new System.EventHandler(this._CashFlowCSV_Click);
             // 
             // openFileDialog1
             // 
@@ -112,23 +114,15 @@ namespace Corporate_Financial_Statement_Analyzer
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = true;
-            this.dataGridView1.AllowUserToDeleteRows = true;
-            this.dataGridView1.AllowUserToResizeRows = true;
-            this.dataGridView1.ReadOnly = false;
-
-            dataGridView1.RowTemplate.MinimumHeight = 20;
-            dataGridView1.RowTemplate.Height = 30;
-            dataGridView1.RowTemplate.Resizable = DataGridViewTriState.True;
-
-            this.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.RowsDefaultCellStyle.WrapMode = DataGridViewTriState.True;
-
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(487, 12);
-            this.dataGridView1.Size = new System.Drawing.Size(301, 426);
             this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.RowTemplate.Height = 30;
+            this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.Size = new System.Drawing.Size(301, 426);
             this.dataGridView1.TabIndex = 6;
-
             // 
             // _incomeStatmentSave
             // 

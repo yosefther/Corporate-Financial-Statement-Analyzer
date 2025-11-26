@@ -19,81 +19,34 @@ namespace Corporate_Financial_Statement_Analyzer
         {
             InitializeComponent();
         }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) {}
+        private void BtnLoad_Click(object sender, EventArgs e) {}
+        private void _incomeStatmentSave_Click(object sender, EventArgs e) {}
+        private void pictureBox1_Click(object sender, EventArgs e) {}
+        private void openFileDialog1_FileOk_1(object sender, CancelEventArgs e){}
+        private void Form1_Load(object sender, EventArgs e) {}
+        private void importCsvButtonClick(object sender, EventArgs e) {}
+        private void ManualEntryButton_Click(object sender, EventArgs e) {}
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e) {}
+        private void label1_Click(object sender, EventArgs e) {}
+        private void label3_Click(object sender, EventArgs e){}
 
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void importCsvButtonClick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ManualEntryButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
+        private void button2_Click(object sender, EventArgs e){
+            CSVLoader BalancSheetCSV = new CSVLoader();
+            dataGridView1.DataSource = BalancSheetCSV.buttonClick_LoadCSV();
         }
 
         private void _IncomStatmentCSV_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Title = "Select a file";
-            ofd.Filter = "CSV Files (*.csv)|*.csv|All Files (*.*)|*.*";
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                string FilePath = ofd.FileName;
-                DataTable dt = CSVLoader.GetDataTableFromCSV(FilePath);
-                dataGridView1.DataSource = dt;
-            }
-            
+            CSVLoader IncomeCSV = new CSVLoader();
+            dataGridView1.DataSource = IncomeCSV.buttonClick_LoadCSV();
         }
 
-
-
-        private void openFileDialog1_FileOk_1(object sender, CancelEventArgs e)
+        private void _CashFlowCSV_Click(object sender, EventArgs e)
         {
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
-
-
-        private void BtnLoad_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void _incomeStatmentSave_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
+            CSVLoader CashFlowCSV = new CSVLoader();
+            dataGridView1.DataSource = CashFlowCSV.buttonClick_LoadCSV();
         }
     }
 }
