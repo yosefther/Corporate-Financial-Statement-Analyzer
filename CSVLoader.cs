@@ -32,9 +32,19 @@ namespace Corporate_Financial_Statement_Analyzer
                 }
                 return dt;
             }
+
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading CSV file: " + ex.Message);
+                if (ex is FileNotFoundException || ex is DirectoryNotFoundException)
+                {
+                    MessageBox.Show("File or directory not found: " + ex.Message);
+                }
+                else if (ex is IOException)
+                {
+                    MessageBox.Show("I/O error occurred: " + ex.Message);
+                }
+                else {
+                    MessageBox.Show("Error loading CSV file: " + ex.Message); }
                 return null;
             }
         }
