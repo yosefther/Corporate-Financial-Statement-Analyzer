@@ -10,15 +10,25 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using System.Windows.Forms;
+using FontAwesome.Sharp;
+using System.Runtime.CompilerServices;
 
 namespace Corporate_Financial_Statement_Analyzer
 {
     public partial class Form1 : Form
     {
+
+        private IconButton currentBtn;
+        private Panel leftBorderBtn;
+
         public Form1()
         {
             InitializeComponent();
+            leftBorderBtn = new Panel();
+            leftBorderBtn.Size = new Size(7, 60);
+            //leftBorderBtn.contr
         }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) {}
         private void BtnLoad_Click(object sender, EventArgs e) {}
         private void _incomeStatmentSave_Click(object sender, EventArgs e) {}
@@ -30,6 +40,12 @@ namespace Corporate_Financial_Statement_Analyzer
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e) {}
         private void label1_Click(object sender, EventArgs e) {}
         private void label3_Click(object sender, EventArgs e){}
+        private void button1_Click(object sender, EventArgs e){}
+        private void iconButton1_Click(object sender, EventArgs e){}
+        private void iconButton4_Click(object sender, EventArgs e){}
+        private void iconButton3_Click(object sender, EventArgs e){}
+        private void AboutButton_Click(object sender, EventArgs e){}
+        private void panel1_Paint(object sender, PaintEventArgs e){}
 
 
         private void button2_Click(object sender, EventArgs e){
