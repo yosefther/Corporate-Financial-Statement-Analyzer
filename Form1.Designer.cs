@@ -33,8 +33,14 @@ namespace Corporate_Financial_Statement_Analyzer
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.AboutButton = new FontAwesome.Sharp.IconButton();
+            this.EditButton = new FontAwesome.Sharp.IconButton();
+            this.BenchmarkingButton = new FontAwesome.Sharp.IconButton();
+            this.MainButton = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this._IncomStatmentCSV = new System.Windows.Forms.Button();
@@ -47,17 +53,11 @@ namespace Corporate_Financial_Statement_Analyzer
             this._CashFlowSave = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.AboutButton = new FontAwesome.Sharp.IconButton();
-            this.EditButton = new FontAwesome.Sharp.IconButton();
-            this.BenchmarkingButton = new FontAwesome.Sharp.IconButton();
-            this.MainButton = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.mainPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -81,6 +81,106 @@ namespace Corporate_Financial_Statement_Analyzer
             this.panelMenu.TabIndex = 10;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // AboutButton
+            // 
+            this.AboutButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.AboutButton.FlatAppearance.BorderSize = 0;
+            this.AboutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AboutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AboutButton.ForeColor = System.Drawing.Color.LightSteelBlue;
+            this.AboutButton.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
+            this.AboutButton.IconColor = System.Drawing.Color.LightSteelBlue;
+            this.AboutButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.AboutButton.IconSize = 30;
+            this.AboutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AboutButton.Location = new System.Drawing.Point(0, 317);
+            this.AboutButton.Name = "AboutButton";
+            this.AboutButton.Size = new System.Drawing.Size(187, 78);
+            this.AboutButton.TabIndex = 15;
+            this.AboutButton.Text = "About";
+            this.AboutButton.UseVisualStyleBackColor = true;
+            this.AboutButton.Click += new System.EventHandler(this.AboutButton_Click);
+            // 
+            // EditButton
+            // 
+            this.EditButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.EditButton.FlatAppearance.BorderSize = 0;
+            this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditButton.ForeColor = System.Drawing.Color.LightSteelBlue;
+            this.EditButton.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.EditButton.IconColor = System.Drawing.Color.LightSteelBlue;
+            this.EditButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.EditButton.IconSize = 30;
+            this.EditButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.EditButton.Location = new System.Drawing.Point(0, 236);
+            this.EditButton.Name = "EditButton";
+            this.EditButton.Size = new System.Drawing.Size(187, 81);
+            this.EditButton.TabIndex = 14;
+            this.EditButton.Text = "Editor";
+            this.EditButton.UseVisualStyleBackColor = true;
+            this.EditButton.Click += new System.EventHandler(this.iconButton4_Click);
+            // 
+            // BenchmarkingButton
+            // 
+            this.BenchmarkingButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BenchmarkingButton.FlatAppearance.BorderSize = 0;
+            this.BenchmarkingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BenchmarkingButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BenchmarkingButton.ForeColor = System.Drawing.Color.LightSteelBlue;
+            this.BenchmarkingButton.IconChar = FontAwesome.Sharp.IconChar.Flask;
+            this.BenchmarkingButton.IconColor = System.Drawing.Color.LightSteelBlue;
+            this.BenchmarkingButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BenchmarkingButton.IconSize = 30;
+            this.BenchmarkingButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BenchmarkingButton.Location = new System.Drawing.Point(0, 144);
+            this.BenchmarkingButton.Name = "BenchmarkingButton";
+            this.BenchmarkingButton.Size = new System.Drawing.Size(187, 92);
+            this.BenchmarkingButton.TabIndex = 13;
+            this.BenchmarkingButton.Text = "Benchmarking";
+            this.BenchmarkingButton.UseVisualStyleBackColor = true;
+            this.BenchmarkingButton.Click += new System.EventHandler(this.iconButton3_Click);
+            // 
+            // MainButton
+            // 
+            this.MainButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MainButton.FlatAppearance.BorderSize = 0;
+            this.MainButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MainButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MainButton.ForeColor = System.Drawing.Color.LightSteelBlue;
+            this.MainButton.IconChar = FontAwesome.Sharp.IconChar.House;
+            this.MainButton.IconColor = System.Drawing.Color.LightSteelBlue;
+            this.MainButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.MainButton.IconSize = 30;
+            this.MainButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.MainButton.Location = new System.Drawing.Point(0, 71);
+            this.MainButton.Name = "MainButton";
+            this.MainButton.Size = new System.Drawing.Size(187, 73);
+            this.MainButton.TabIndex = 12;
+            this.MainButton.Text = "Main";
+            this.MainButton.UseVisualStyleBackColor = true;
+            this.MainButton.Click += new System.EventHandler(this.MainButton_Click);
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.Color.LightSteelBlue;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ArrowRight;
+            this.iconButton1.IconColor = System.Drawing.Color.LightSteelBlue;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 30;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(0, 546);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(187, 60);
+            this.iconButton1.TabIndex = 11;
+            this.iconButton1.Text = "login";
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label4);
@@ -103,6 +203,18 @@ namespace Corporate_Financial_Statement_Analyzer
             this.label4.TabIndex = 16;
             this.label4.Text = "TWELVE LABS";
             this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.pictureBox1.Image = global::Corporate_Financial_Statement_Analyzer.Properties.Resources.pngegg__2_;
+            this.pictureBox1.Location = new System.Drawing.Point(-87, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(252, 68);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // label1
             // 
@@ -243,118 +355,6 @@ namespace Corporate_Financial_Statement_Analyzer
             this.mainPanel.Visible = false;
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
-            // AboutButton
-            // 
-            this.AboutButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.AboutButton.FlatAppearance.BorderSize = 0;
-            this.AboutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AboutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AboutButton.ForeColor = System.Drawing.Color.LightSteelBlue;
-            this.AboutButton.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
-            this.AboutButton.IconColor = System.Drawing.Color.LightSteelBlue;
-            this.AboutButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.AboutButton.IconSize = 30;
-            this.AboutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AboutButton.Location = new System.Drawing.Point(0, 317);
-            this.AboutButton.Name = "AboutButton";
-            this.AboutButton.Size = new System.Drawing.Size(187, 78);
-            this.AboutButton.TabIndex = 15;
-            this.AboutButton.Text = "About";
-            this.AboutButton.UseVisualStyleBackColor = true;
-            this.AboutButton.Click += new System.EventHandler(this.AboutButton_Click);
-            // 
-            // EditButton
-            // 
-            this.EditButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.EditButton.FlatAppearance.BorderSize = 0;
-            this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditButton.ForeColor = System.Drawing.Color.LightSteelBlue;
-            this.EditButton.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.EditButton.IconColor = System.Drawing.Color.LightSteelBlue;
-            this.EditButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.EditButton.IconSize = 30;
-            this.EditButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EditButton.Location = new System.Drawing.Point(0, 236);
-            this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(187, 81);
-            this.EditButton.TabIndex = 14;
-            this.EditButton.Text = "Editor";
-            this.EditButton.UseVisualStyleBackColor = true;
-            this.EditButton.Click += new System.EventHandler(this.iconButton4_Click);
-            // 
-            // BenchmarkingButton
-            // 
-            this.BenchmarkingButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BenchmarkingButton.FlatAppearance.BorderSize = 0;
-            this.BenchmarkingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BenchmarkingButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BenchmarkingButton.ForeColor = System.Drawing.Color.LightSteelBlue;
-            this.BenchmarkingButton.IconChar = FontAwesome.Sharp.IconChar.Flask;
-            this.BenchmarkingButton.IconColor = System.Drawing.Color.LightSteelBlue;
-            this.BenchmarkingButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BenchmarkingButton.IconSize = 30;
-            this.BenchmarkingButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BenchmarkingButton.Location = new System.Drawing.Point(0, 144);
-            this.BenchmarkingButton.Name = "BenchmarkingButton";
-            this.BenchmarkingButton.Size = new System.Drawing.Size(187, 92);
-            this.BenchmarkingButton.TabIndex = 13;
-            this.BenchmarkingButton.Text = "Benchmarking";
-            this.BenchmarkingButton.UseVisualStyleBackColor = true;
-            this.BenchmarkingButton.Click += new System.EventHandler(this.iconButton3_Click);
-            // 
-            // MainButton
-            // 
-            this.MainButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.MainButton.FlatAppearance.BorderSize = 0;
-            this.MainButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MainButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MainButton.ForeColor = System.Drawing.Color.LightSteelBlue;
-            this.MainButton.IconChar = FontAwesome.Sharp.IconChar.House;
-            this.MainButton.IconColor = System.Drawing.Color.LightSteelBlue;
-            this.MainButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.MainButton.IconSize = 30;
-            this.MainButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.MainButton.Location = new System.Drawing.Point(0, 71);
-            this.MainButton.Name = "MainButton";
-            this.MainButton.Size = new System.Drawing.Size(187, 73);
-            this.MainButton.TabIndex = 12;
-            this.MainButton.Text = "Main";
-            this.MainButton.UseVisualStyleBackColor = true;
-            this.MainButton.Click += new System.EventHandler(this.MainButton_Click);
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.LightSteelBlue;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ArrowRight;
-            this.iconButton1.IconColor = System.Drawing.Color.LightSteelBlue;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 30;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 546);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(187, 60);
-            this.iconButton1.TabIndex = 11;
-            this.iconButton1.Text = "login";
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.pictureBox1.Image = global::Corporate_Financial_Statement_Analyzer.Properties.Resources.pngegg__2_;
-            this.pictureBox1.Location = new System.Drawing.Point(-87, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(252, 68);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -370,10 +370,10 @@ namespace Corporate_Financial_Statement_Analyzer
             this.panelMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -400,7 +400,7 @@ namespace Corporate_Financial_Statement_Analyzer
         private Button _BalanceSheetSave;
         private Button _CashFlowSave;
         private CheckBox checkBox1;
-        private Panel mainPanel;
+        //private Panel mainPanel;
     }
 }
 
