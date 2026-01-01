@@ -10,8 +10,8 @@ using System.Windows.Forms;
 namespace Corporate_Financial_Statement_Analyzer
 {
     public class CSVLoader{
-    
-    
+        private DataGrid dataGridView1;
+
         public static DataTable GetDataTableFromCSV(string path)
         {
             try
@@ -72,6 +72,22 @@ namespace Corporate_Financial_Statement_Analyzer
         }
 
 
+        //public void LoadCSV(string fileType)
+        //{
+        //    CSVLoader loader = new CSVLoader();
+        //    switch (fileType)
+        //    {
+        //        case "BalanceSheet":
+        //            dataGridView1.DataSource = loader.LoadBalanceSheetCSV();
+        //            break;
+        //        case "IncomeStatement":
+        //            dataGridView1.DataSource = loader.LoadIncomeStatementCSV();
+        //            break;
+        //        case "CashFlow":
+        //            dataGridView1.DataSource = loader.LoadCashFlowCSV();
+        //            break;
+        //    }
+        //}
 
     }
 

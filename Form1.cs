@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using System.Windows.Forms;
 using FontAwesome.Sharp;
 using System.Runtime.CompilerServices;
 
@@ -18,13 +17,9 @@ namespace Corporate_Financial_Statement_Analyzer
     public partial class Form1 : Form
     {
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) {}
-        private void BtnLoad_Click(object sender, EventArgs e) {}
         private void _incomeStatmentSave_Click(object sender, EventArgs e) {}
-        private void pictureBox1_Click(object sender, EventArgs e) {}
         private void openFileDialog1_FileOk_1(object sender, CancelEventArgs e){}
         private void Form1_Load(object sender, EventArgs e) {}
-        private void importCsvButtonClick(object sender, EventArgs e) {}
-        private void ManualEntryButton_Click(object sender, EventArgs e) {}
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e) {}
         private void label1_Click(object sender, EventArgs e) {}
         private void label3_Click(object sender, EventArgs e){}
@@ -52,12 +47,12 @@ namespace Corporate_Financial_Statement_Analyzer
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
-            leftBorderBtn.Size = new Size(7, 60);
+            leftBorderBtn.Width = 7;
             panelMenu.Controls.Add(leftBorderBtn);
 
         }
 
-
+        //todo make the methods below more generic to reduce code duplication 
         private void button2_Click(object sender, EventArgs e){
             CSVLoader BalancSheetCSV = new CSVLoader();
             dataGridView1.DataSource = BalancSheetCSV.buttonClick_LoadCSV();
@@ -74,12 +69,13 @@ namespace Corporate_Financial_Statement_Analyzer
             CSVLoader CashFlowCSV = new CSVLoader();
             dataGridView1.DataSource = CashFlowCSV.buttonClick_LoadCSV();
         }
-
-        private void ActivteButton(object senderButn , Color color)
+        
+       
+        private void ActivateButton(object senderBut , Color color)
         {
-            if (senderButn != null)
+            if (senderBut != null)
             {
-                currentBtn = (IconButton)senderButn;
+                currentBtn = (IconButton)senderBut;
                 currentBtn.BackColor = Color.FromArgb(37, 36, 81);
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
@@ -87,6 +83,7 @@ namespace Corporate_Financial_Statement_Analyzer
                 currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
                 leftBorderBtn.BackColor = color;
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
+                leftBorderBtn.Height = currentBtn.Height;   
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
             }
@@ -112,7 +109,7 @@ namespace Corporate_Financial_Statement_Analyzer
             if (currentBtn != clickedBtn)
             {
                 DisableButton();                      
-                ActivteButton(clickedBtn,color);
+                ActivateButton(clickedBtn,color);
             }
             else
             {
@@ -124,14 +121,22 @@ namespace Corporate_Financial_Statement_Analyzer
         private void MainButton_Click(object sender, EventArgs e)
         {
             DisableAndEnableButtons(sender , RGBColors.color1);
+            mainPanel.Visible= true;
+
         }
         private void iconButton3_Click(object sender, EventArgs e)
         {
             DisableAndEnableButtons(sender, RGBColors.color2);
+            //EditorPanel.Visible = true;
+            mainPanel.Visible= false;
+
         }
         private void iconButton4_Click(object sender, EventArgs e)
         {
             DisableAndEnableButtons(sender, RGBColors.color3);
+            //EditorPanel.Visible = true;
+            mainPanel.Visible= false;
+           
         }
         private void AboutButton_Click(object sender, EventArgs e)
         {
@@ -143,5 +148,28 @@ namespace Corporate_Financial_Statement_Analyzer
             DisableAndEnableButtons(sender, RGBColors.color5);
         }
 
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void _CashFlowSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void panel1_Paint_2(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void AboutButton_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
