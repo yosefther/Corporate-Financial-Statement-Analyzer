@@ -89,5 +89,15 @@ namespace Corporate_Financial_Statement_Analyzer.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap شعار_أخضر_مُحدد_رطوش_إنترنت_removebg_preview__2_ {
+            get {
+                object obj = ResourceManager.GetObject("شعار_أخضر_مُحدد_رطوش_إنترنت-removebg-preview (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
