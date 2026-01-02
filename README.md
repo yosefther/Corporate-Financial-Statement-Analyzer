@@ -2,6 +2,7 @@
 TODO 
 - [ ] make btnLoadData in AddBenchmarkingContent open a file dialog to load benchmark data or make it show some data ****
 - [ ] fix the metadata for god sake *********
+- [ ] clean the code
 
  TODO : one day 
 - [ ] add CsvHelper (load + save, with proper CSV escaping)
