@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
+using System.Windows.Markup;
 
 namespace Corporate_Financial_Statement_Analyzer
 {
@@ -196,21 +198,21 @@ namespace Corporate_Financial_Statement_Analyzer
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.label4.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label4.Location = new System.Drawing.Point(74, 33);
+            this.label4.ForeColor = System.Drawing.Color.SeaShell;
+            this.label4.Location = new System.Drawing.Point(67, 33);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 16);
+            this.label4.Size = new System.Drawing.Size(73, 16);
             this.label4.TabIndex = 16;
-            this.label4.Text = "TWELVE LABS";
+            this.label4.Text = "Fast Path";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.pictureBox1.Image = global::Corporate_Financial_Statement_Analyzer.Properties.Resources.pngegg__2_;
-            this.pictureBox1.Location = new System.Drawing.Point(-87, 3);
+            this.pictureBox1.Image = global::Corporate_Financial_Statement_Analyzer.Properties.Resources.شعار_أخضر_مُحدد_رطوش_إنترنت_removebg_preview__2_;
+            this.pictureBox1.Location = new System.Drawing.Point(-116, -17);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(252, 68);
+            this.pictureBox1.Size = new System.Drawing.Size(316, 116);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
@@ -220,7 +222,7 @@ namespace Corporate_Financial_Statement_Analyzer
             // 
             this.label1.AutoSize = true;
             this.label1.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.label1.Location = new System.Drawing.Point(7, 120);
+            this.label1.Location = new System.Drawing.Point(162, 130);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 0;
@@ -230,7 +232,7 @@ namespace Corporate_Financial_Statement_Analyzer
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 212);
+            this.label3.Location = new System.Drawing.Point(162, 222);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 13);
             this.label3.TabIndex = 2;
@@ -240,7 +242,7 @@ namespace Corporate_Financial_Statement_Analyzer
             // _IncomStatmentCSV
             // 
             this._IncomStatmentCSV.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this._IncomStatmentCSV.Location = new System.Drawing.Point(96, 115);
+            this._IncomStatmentCSV.Location = new System.Drawing.Point(251, 125);
             this._IncomStatmentCSV.Name = "_IncomStatmentCSV";
             this._IncomStatmentCSV.Size = new System.Drawing.Size(75, 23);
             this._IncomStatmentCSV.TabIndex = 3;
@@ -251,7 +253,7 @@ namespace Corporate_Financial_Statement_Analyzer
             // _BalancSheetCSV
             // 
             this._BalancSheetCSV.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this._BalancSheetCSV.Location = new System.Drawing.Point(96, 207);
+            this._BalancSheetCSV.Location = new System.Drawing.Point(251, 217);
             this._BalancSheetCSV.Name = "_BalancSheetCSV";
             this._BalancSheetCSV.Size = new System.Drawing.Size(75, 23);
             this._BalancSheetCSV.TabIndex = 4;
@@ -262,7 +264,7 @@ namespace Corporate_Financial_Statement_Analyzer
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 298);
+            this.label2.Location = new System.Drawing.Point(184, 308);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 1;
@@ -271,7 +273,7 @@ namespace Corporate_Financial_Statement_Analyzer
             // _CashFlowCSV
             // 
             this._CashFlowCSV.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this._CashFlowCSV.Location = new System.Drawing.Point(96, 288);
+            this._CashFlowCSV.Location = new System.Drawing.Point(251, 298);
             this._CashFlowCSV.Name = "_CashFlowCSV";
             this._CashFlowCSV.Size = new System.Drawing.Size(75, 23);
             this._CashFlowCSV.TabIndex = 5;
@@ -282,21 +284,23 @@ namespace Corporate_Financial_Statement_Analyzer
             // dataGridView1
             // 
             this.dataGridView1.AllowDrop = true;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(593, 22);
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataGridView1.ForeColor = Color.Black;
+            this.dataGridView1.Location = new System.Drawing.Point(471, 3);
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.Size = new System.Drawing.Size(301, 426);
+            this.dataGridView1.Size = new System.Drawing.Size(441, 549);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // _incomeStatmentSave
             // 
             this._incomeStatmentSave.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this._incomeStatmentSave.Location = new System.Drawing.Point(177, 115);
+            this._incomeStatmentSave.Location = new System.Drawing.Point(332, 125);
             this._incomeStatmentSave.Name = "_incomeStatmentSave";
             this._incomeStatmentSave.Size = new System.Drawing.Size(75, 23);
             this._incomeStatmentSave.TabIndex = 7;
@@ -307,7 +311,7 @@ namespace Corporate_Financial_Statement_Analyzer
             // _BalanceSheetSave
             // 
             this._BalanceSheetSave.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this._BalanceSheetSave.Location = new System.Drawing.Point(177, 207);
+            this._BalanceSheetSave.Location = new System.Drawing.Point(332, 217);
             this._BalanceSheetSave.Name = "_BalanceSheetSave";
             this._BalanceSheetSave.Size = new System.Drawing.Size(75, 23);
             this._BalanceSheetSave.TabIndex = 8;
@@ -317,7 +321,7 @@ namespace Corporate_Financial_Statement_Analyzer
             // _CashFlowSave
             // 
             this._CashFlowSave.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this._CashFlowSave.Location = new System.Drawing.Point(177, 288);
+            this._CashFlowSave.Location = new System.Drawing.Point(332, 298);
             this._CashFlowSave.Name = "_CashFlowSave";
             this._CashFlowSave.Size = new System.Drawing.Size(75, 23);
             this._CashFlowSave.TabIndex = 9;
@@ -328,7 +332,7 @@ namespace Corporate_Financial_Statement_Analyzer
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(141, 383);
+            this.checkBox1.Location = new System.Drawing.Point(296, 393);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(80, 17);
             this.checkBox1.TabIndex = 12;
@@ -348,7 +352,7 @@ namespace Corporate_Financial_Statement_Analyzer
             this.mainPanel.Controls.Add(this._IncomStatmentCSV);
             this.mainPanel.Controls.Add(this.label3);
             this.mainPanel.Controls.Add(this.label1);
-            this.mainPanel.Location = new System.Drawing.Point(222, 26);
+            this.mainPanel.Location = new System.Drawing.Point(207, 12);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(915, 555);
             this.mainPanel.TabIndex = 13;

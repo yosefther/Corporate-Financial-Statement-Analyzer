@@ -81,9 +81,9 @@ namespace Corporate_Financial_Statement_Analyzer
         private void InitializeContentPanels()
         {
             // Main panel
-            mainPanel = new Panel();
-            mainPanel.Dock = DockStyle.Fill;
-            mainPanel.BackColor = Color.FromArgb(37, 36, 81);
+            ////mainPanel = new Panel();
+            //mainPanel.Dock = DockStyle.Fill;
+            //mainPanel.BackColor = Color.FromArgb(37, 36, 81);
             contentContainer.Controls.Add(mainPanel);
 
             // Benchmarking panel
@@ -131,20 +131,41 @@ namespace Corporate_Financial_Statement_Analyzer
         // CSV Loading Methods
         private void button2_Click(object sender, EventArgs e)
         {
-            CSVLoader BalancSheetCSV = new CSVLoader();
-            dataGridView1.DataSource = BalancSheetCSV.buttonClick_LoadCSV();
+            CSVLoader loader = new CSVLoader();
+            var data = loader.buttonClick_LoadCSV();
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = data;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView1.Refresh();
+            dataGridView1.Update();
+            dataGridView1.ClearSelection();
+
         }
 
         private void _IncomStatmentCSV_Click(object sender, EventArgs e)
         {
-            CSVLoader IncomeCSV = new CSVLoader();
-            dataGridView1.DataSource = IncomeCSV.buttonClick_LoadCSV();
+            CSVLoader loader = new CSVLoader();
+            var data = loader.buttonClick_LoadCSV();
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = data;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView1.Refresh();
+            dataGridView1.Update();
+            dataGridView1.ClearSelection();
+
         }
 
         private void _CashFlowCSV_Click(object sender, EventArgs e)
         {
-            CSVLoader CashFlowCSV = new CSVLoader();
-            dataGridView1.DataSource = CashFlowCSV.buttonClick_LoadCSV();
+            CSVLoader loader = new CSVLoader();
+            var data = loader.buttonClick_LoadCSV();
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = data;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView1.Refresh();
+            dataGridView1.Update();
+            dataGridView1.ClearSelection();
+
         }
 
         // Button Styling Methods
@@ -201,6 +222,9 @@ namespace Corporate_Financial_Statement_Analyzer
         {
             DisableAndEnableButtons(sender, RGBColors.color1);
             ShowPanel(mainPanel);
+            //mainPanel.Visible = true;
+
+
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
@@ -254,23 +278,23 @@ namespace Corporate_Financial_Statement_Analyzer
             lblBenchmarking.Text = "Benchmarking Section";
             lblBenchmarking.Font = new Font("Segoe UI", 16, FontStyle.Bold);
             lblBenchmarking.ForeColor = Color.White;
-            lblBenchmarking.Location = new Point(20, 20);
+            lblBenchmarking.Location = new Point(555, 20);
             lblBenchmarking.AutoSize = true;
 
             Label lblDescription = new Label();
             lblDescription.Text = "This section allows you to compare financial statements against industry benchmarks.";
             lblDescription.ForeColor = Color.LightGray;
-            lblDescription.Location = new Point(20, 60);
+            lblDescription.Location = new Point(475, 60);
             lblDescription.Size = new Size(400, 60);
             lblDescription.AutoSize = false; // ✅ Enables text wrapping
-            lblDescription.TextAlign = ContentAlignment.TopLeft;
+            lblDescription.TextAlign = ContentAlignment.MiddleCenter;
 
             Button btnLoadData = new Button();
             btnLoadData.Text = "Load Benchmark Data";
-            btnLoadData.Location = new Point(20, 130);
+            btnLoadData.Location = new Point(593, 130);
             btnLoadData.Size = new Size(150, 30);
             btnLoadData.Click += (s, e) => {
-                MessageBox.Show("Loading benchmark data...");
+                MessageBox.Show("Loading benchmark data...");///make it open a file dialog to load benchmark data 
             };
 
             benchmarkingPanel.Controls.Add(lblBenchmarking);
