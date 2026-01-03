@@ -36,7 +36,6 @@ namespace Corporate_Financial_Statement_Analyzer
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.AboutButton = new FontAwesome.Sharp.IconButton();
-            this.EditButton = new FontAwesome.Sharp.IconButton();
             this.BenchmarkingButton = new FontAwesome.Sharp.IconButton();
             this.MainButton = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
@@ -53,7 +52,6 @@ namespace Corporate_Financial_Statement_Analyzer
             this._incomeStatmentSave = new System.Windows.Forms.Button();
             this._BalanceSheetSave = new System.Windows.Forms.Button();
             this._CashFlowSave = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -71,7 +69,6 @@ namespace Corporate_Financial_Statement_Analyzer
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.panelMenu.Controls.Add(this.AboutButton);
-            this.panelMenu.Controls.Add(this.EditButton);
             this.panelMenu.Controls.Add(this.BenchmarkingButton);
             this.panelMenu.Controls.Add(this.MainButton);
             this.panelMenu.Controls.Add(this.iconButton1);
@@ -95,33 +92,13 @@ namespace Corporate_Financial_Statement_Analyzer
             this.AboutButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.AboutButton.IconSize = 30;
             this.AboutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AboutButton.Location = new System.Drawing.Point(0, 317);
+            this.AboutButton.Location = new System.Drawing.Point(0, 236);
             this.AboutButton.Name = "AboutButton";
             this.AboutButton.Size = new System.Drawing.Size(187, 78);
             this.AboutButton.TabIndex = 15;
             this.AboutButton.Text = "About";
             this.AboutButton.UseVisualStyleBackColor = true;
             this.AboutButton.Click += new System.EventHandler(this.AboutButton_Click);
-            // 
-            // EditButton
-            // 
-            this.EditButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.EditButton.FlatAppearance.BorderSize = 0;
-            this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditButton.ForeColor = System.Drawing.Color.LightSteelBlue;
-            this.EditButton.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.EditButton.IconColor = System.Drawing.Color.LightSteelBlue;
-            this.EditButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.EditButton.IconSize = 30;
-            this.EditButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EditButton.Location = new System.Drawing.Point(0, 236);
-            this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(187, 81);
-            this.EditButton.TabIndex = 14;
-            this.EditButton.Text = "Editor";
-            this.EditButton.UseVisualStyleBackColor = true;
-            this.EditButton.Click += new System.EventHandler(this.iconButton4_Click);
             // 
             // BenchmarkingButton
             // 
@@ -222,7 +199,7 @@ namespace Corporate_Financial_Statement_Analyzer
             // 
             this.label1.AutoSize = true;
             this.label1.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.label1.Location = new System.Drawing.Point(162, 130);
+            this.label1.Location = new System.Drawing.Point(118, 147);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 0;
@@ -232,7 +209,7 @@ namespace Corporate_Financial_Statement_Analyzer
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(162, 222);
+            this.label3.Location = new System.Drawing.Point(118, 272);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 13);
             this.label3.TabIndex = 2;
@@ -241,30 +218,26 @@ namespace Corporate_Financial_Statement_Analyzer
             // 
             // _IncomStatmentCSV
             // 
-            this._IncomStatmentCSV.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this._IncomStatmentCSV.Location = new System.Drawing.Point(251, 125);
+            this._IncomStatmentCSV.Location = new System.Drawing.Point(212, 138);
             this._IncomStatmentCSV.Name = "_IncomStatmentCSV";
-            this._IncomStatmentCSV.Size = new System.Drawing.Size(75, 23);
-            this._IncomStatmentCSV.TabIndex = 3;
+            this._IncomStatmentCSV.Size = new System.Drawing.Size(150, 30);
+            this._IncomStatmentCSV.TabIndex = 13;
             this._IncomStatmentCSV.Text = "File.csv";
-            this._IncomStatmentCSV.UseVisualStyleBackColor = true;
             this._IncomStatmentCSV.Click += new System.EventHandler(this._IncomStatmentCSV_Click);
             // 
             // _BalancSheetCSV
             // 
-            this._BalancSheetCSV.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this._BalancSheetCSV.Location = new System.Drawing.Point(251, 217);
+            this._BalancSheetCSV.Location = new System.Drawing.Point(212, 258);
             this._BalancSheetCSV.Name = "_BalancSheetCSV";
-            this._BalancSheetCSV.Size = new System.Drawing.Size(75, 23);
+            this._BalancSheetCSV.Size = new System.Drawing.Size(150, 30);
             this._BalancSheetCSV.TabIndex = 4;
             this._BalancSheetCSV.Text = "File.csv";
-            this._BalancSheetCSV.UseVisualStyleBackColor = true;
             this._BalancSheetCSV.Click += new System.EventHandler(this.button2_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(184, 308);
+            this.label2.Location = new System.Drawing.Point(130, 393);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 1;
@@ -272,76 +245,59 @@ namespace Corporate_Financial_Statement_Analyzer
             // 
             // _CashFlowCSV
             // 
-            this._CashFlowCSV.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this._CashFlowCSV.Location = new System.Drawing.Point(251, 298);
+            this._CashFlowCSV.Location = new System.Drawing.Point(212, 384);
             this._CashFlowCSV.Name = "_CashFlowCSV";
-            this._CashFlowCSV.Size = new System.Drawing.Size(75, 23);
+            this._CashFlowCSV.Size = new System.Drawing.Size(150, 30);
             this._CashFlowCSV.TabIndex = 5;
             this._CashFlowCSV.Text = "File.csv";
-            this._CashFlowCSV.UseVisualStyleBackColor = true;
             this._CashFlowCSV.Click += new System.EventHandler(this._CashFlowCSV_Click);
             // 
             // dataGridView1
             // 
+            dataGridView1.ForeColor = System.Drawing.SystemColors.ControlText;
+
             this.dataGridView1.AllowDrop = true;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dataGridView1.ForeColor = Color.Black;
-            this.dataGridView1.Location = new System.Drawing.Point(471, 3);
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dataGridView1.Location = new System.Drawing.Point(561, 16);
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.Size = new System.Drawing.Size(441, 549);
+            this.dataGridView1.Size = new System.Drawing.Size(404, 569);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // _incomeStatmentSave
             // 
-            this._incomeStatmentSave.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this._incomeStatmentSave.Location = new System.Drawing.Point(332, 125);
+            this._incomeStatmentSave.Location = new System.Drawing.Point(368, 138);
             this._incomeStatmentSave.Name = "_incomeStatmentSave";
-            this._incomeStatmentSave.Size = new System.Drawing.Size(75, 23);
+            this._incomeStatmentSave.Size = new System.Drawing.Size(150, 30);
             this._incomeStatmentSave.TabIndex = 7;
             this._incomeStatmentSave.Text = "save";
-            this._incomeStatmentSave.UseVisualStyleBackColor = true;
             this._incomeStatmentSave.Click += new System.EventHandler(this._incomeStatmentSave_Click);
             // 
             // _BalanceSheetSave
             // 
-            this._BalanceSheetSave.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this._BalanceSheetSave.Location = new System.Drawing.Point(332, 217);
+            this._BalanceSheetSave.Location = new System.Drawing.Point(368, 258);
             this._BalanceSheetSave.Name = "_BalanceSheetSave";
-            this._BalanceSheetSave.Size = new System.Drawing.Size(75, 23);
+            this._BalanceSheetSave.Size = new System.Drawing.Size(150, 30);
             this._BalanceSheetSave.TabIndex = 8;
             this._BalanceSheetSave.Text = "save";
-            this._BalanceSheetSave.UseVisualStyleBackColor = true;
             // 
             // _CashFlowSave
             // 
-            this._CashFlowSave.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this._CashFlowSave.Location = new System.Drawing.Point(332, 298);
+            this._CashFlowSave.Location = new System.Drawing.Point(368, 384);
             this._CashFlowSave.Name = "_CashFlowSave";
-            this._CashFlowSave.Size = new System.Drawing.Size(75, 23);
+            this._CashFlowSave.Size = new System.Drawing.Size(150, 30);
             this._CashFlowSave.TabIndex = 9;
             this._CashFlowSave.Text = "save";
-            this._CashFlowSave.UseVisualStyleBackColor = true;
             this._CashFlowSave.Click += new System.EventHandler(this._CashFlowSave_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(296, 393);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 12;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // mainPanel
             // 
-            this.mainPanel.Controls.Add(this.checkBox1);
             this.mainPanel.Controls.Add(this._CashFlowSave);
             this.mainPanel.Controls.Add(this._BalanceSheetSave);
             this.mainPanel.Controls.Add(this._incomeStatmentSave);
@@ -352,11 +308,10 @@ namespace Corporate_Financial_Statement_Analyzer
             this.mainPanel.Controls.Add(this._IncomStatmentCSV);
             this.mainPanel.Controls.Add(this.label3);
             this.mainPanel.Controls.Add(this.label1);
-            this.mainPanel.Location = new System.Drawing.Point(207, 12);
+            this.mainPanel.Location = new System.Drawing.Point(180, -4);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(915, 555);
+            this.mainPanel.Size = new System.Drawing.Size(970, 600);
             this.mainPanel.TabIndex = 13;
-            this.mainPanel.Visible = false;
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
             // Form1
@@ -387,7 +342,7 @@ namespace Corporate_Financial_Statement_Analyzer
         private Panel panelMenu;
         private Panel panel2;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton EditButton;
+        //private FontAwesome.Sharp.IconButton EditButton;
         private FontAwesome.Sharp.IconButton BenchmarkingButton;
         private FontAwesome.Sharp.IconButton MainButton;
         private FontAwesome.Sharp.IconButton AboutButton;
@@ -403,7 +358,6 @@ namespace Corporate_Financial_Statement_Analyzer
         private Button _incomeStatmentSave;
         private Button _BalanceSheetSave;
         private Button _CashFlowSave;
-        private CheckBox checkBox1;
         //private Panel mainPanel;
     }
 }
