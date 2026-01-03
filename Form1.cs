@@ -40,7 +40,6 @@ namespace Corporate_Financial_Statement_Analyzer
 
         // Event handlers (keeping your existing empty ones)
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) {}
-        private void _incomeStatmentSave_Click(object sender, EventArgs e) {}
         private void openFileDialog1_FileOk_1(object sender, CancelEventArgs e) {}
         private void Form1_Load(object sender, EventArgs e) {}
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e) {}
@@ -142,6 +141,20 @@ namespace Corporate_Financial_Statement_Analyzer
 
         }
 
+        private void _incomeStatmentSave_Click(object sender, EventArgs e) {
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "CSV files (*.csv)|*.csv";
+                sfd.Title = "Save Edited Financial Data";
+                sfd.FileName = "edited_financials.csv";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    // Assuming your DataGridView is named 'dataGridView1'
+                    CSVLoader.SaveDataGridViewToCSV(dataGridView1, sfd.FileName);
+                }
+            }
+        }
         private void _IncomStatmentCSV_Click(object sender, EventArgs e)
         {
             CSVLoader loader = new CSVLoader();
@@ -238,16 +251,16 @@ namespace Corporate_Financial_Statement_Analyzer
             }
         }
 
-        private void iconButton4_Click(object sender, EventArgs e)
-        {
-            DisableAndEnableButtons(sender, RGBColors.color3);
-            ShowPanel(editorPanel);
+        //private void iconButton4_Click(object sender, EventArgs e)
+        //{
+        //    DisableAndEnableButtons(sender, RGBColors.color3);
+        //    ShowPanel(editorPanel);
             
-            if (editorPanel.Controls.Count == 0)
-            {
-                AddEditorContent();
-            }
-        }
+        //    if (editorPanel.Controls.Count == 0)
+        //    {
+        //        AddEditorContent();
+        //    }
+        //}
 
         private void AboutButton_Click(object sender, EventArgs e)
         {
@@ -302,44 +315,44 @@ namespace Corporate_Financial_Statement_Analyzer
             benchmarkingPanel.Controls.Add(btnLoadData);
         }
 
-        private void AddEditorContent()
-        {
-            Label lblEditor = new Label();
-            lblEditor.Text = "Editor Section";
-            lblEditor.Font = new Font("Segoe UI", 16, FontStyle.Bold);
-            lblEditor.ForeColor = Color.White;
-            lblEditor.Location = new Point(20, 20);
-            lblEditor.AutoSize = true;
+        //private void AddEditorContent()
+        //{
+        //    Label lblEditor = new Label();
+        //    lblEditor.Text = "Editor Section";
+        //    lblEditor.Font = new Font("Segoe UI", 16, FontStyle.Bold);
+        //    lblEditor.ForeColor = Color.White;
+        //    lblEditor.Location = new Point(550, 20);
+        //    lblEditor.AutoSize = true;
 
-            Label lblDescription = new Label();
-            lblDescription.Text = "Edit and modify your financial statements here.";
-            lblDescription.ForeColor = Color.LightGray;
-            lblDescription.Location = new Point(20, 60);
-            lblDescription.Size = new Size(400, 60);
-            lblDescription.AutoSize = false; // ✅
-            lblDescription.TextAlign = ContentAlignment.TopLeft;
+        //    Label lblDescription = new Label();
+        //    lblDescription.Text = "Edit and modify your financial statements here.";
+        //    lblDescription.ForeColor = Color.LightGray;
+        //    lblDescription.Location = new Point(520, 60);
+        //    lblDescription.Size = new Size(400, 60);
+        //    lblDescription.AutoSize = false; 
+        //    lblDescription.TextAlign = ContentAlignment.TopLeft;
 
-            Button btnEditBalanceSheet = new Button();
-            btnEditBalanceSheet.Text = "Edit Balance Sheet";
-            btnEditBalanceSheet.Location = new Point(20, 130);
-            btnEditBalanceSheet.Size = new Size(150, 30);
-            btnEditBalanceSheet.Click += (s, e) => {
-                MessageBox.Show("Opening balance sheet editor...");
-            };
+        //    Button btnEditBalanceSheet = new Button();
+        //    btnEditBalanceSheet.Text = "Edit Balance Sheet";
+        //    btnEditBalanceSheet.Location = new Point(550, 130);
+        //    btnEditBalanceSheet.Size = new Size(150, 30);
+        //    btnEditBalanceSheet.Click += (s, e) => {
+        //        MessageBox.Show("Opening balance sheet editor...");
+        //    };
 
-            Button btnEditIncomeStatement = new Button();
-            btnEditIncomeStatement.Text = "Edit Income Statement";
-            btnEditIncomeStatement.Location = new Point(20, 170);
-            btnEditIncomeStatement.Size = new Size(150, 30);
-            btnEditIncomeStatement.Click += (s, e) => {
-                MessageBox.Show("Opening income statement editor...");
-            };
+        //    Button btnEditIncomeStatement = new Button();
+        //    btnEditIncomeStatement.Text = "Edit Income Statement";
+        //    btnEditIncomeStatement.Location = new Point(550, 170);
+        //    btnEditIncomeStatement.Size = new Size(150, 30);
+        //    btnEditIncomeStatement.Click += (s, e) => {
+        //        MessageBox.Show("Opening income statement editor...");
+        //    };
 
-            editorPanel.Controls.Add(lblEditor);
-            editorPanel.Controls.Add(lblDescription);
-            editorPanel.Controls.Add(btnEditBalanceSheet);
-            editorPanel.Controls.Add(btnEditIncomeStatement);
-        }
+        //    editorPanel.Controls.Add(lblEditor);
+        //    editorPanel.Controls.Add(lblDescription);
+        //    editorPanel.Controls.Add(btnEditBalanceSheet);
+        //    editorPanel.Controls.Add(btnEditIncomeStatement);
+        //}
 
         private void AddAboutContent()
         {
