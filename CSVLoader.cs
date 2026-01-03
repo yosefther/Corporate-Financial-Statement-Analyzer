@@ -10,10 +10,61 @@ using System.Windows.Forms;
 namespace Corporate_Financial_Statement_Analyzer
 {
     public class CSVLoader{
-        private DataGrid dataGridView1;
+        public DataGrid dataGridView1;
+
+        public static void SaveDataGridViewToCSV(DataGridView dgv, string filePath)
+        {
+            try
+            {
+                StringBuilder sb = new StringBuilder();
+
+                // Write headers
+                for (int i = 0; i < dgv.Columns.Count; i++)
+                {
+                    sb.Append(EscapeCsvField(dgv.Columns[i].HeaderText));
+                    if (i < dgv.Columns.Count - 1)
+                        sb.Append(",");
+                }
+                sb.AppendLine();
+
+                // Write rows
+                foreach (DataGridViewRow row in dgv.Rows)
+                {
+                    if (row.IsNewRow) continue; // Skip the empty "new row" at the bottom
+
+                    for (int i = 0; i < dgv.Columns.Count; i++)
+                    {
+                        string cellValue = row.Cells[i].Value?.ToString() ?? "";
+                        sb.Append(EscapeCsvField(cellValue));
+                        if (i < dgv.Columns.Count - 1)
+                            sb.Append(",");
+                    }
+                    sb.AppendLine();
+                }
+
+                File.WriteAllText(filePath, sb.ToString(), Encoding.UTF8);
+                MessageBox.Show("File saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saving CSV file:\n{ex.Message}", "Save Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Helper to handle commas, quotes, and newlines in CSV fields
+        public static string EscapeCsvField(string field)
+        {
+            if (field == null) return "";
+            if (field.Contains(',') || field.Contains('"') || field.Contains('\n') || field.Contains('\r'))
+            {
+                return "\"" + field.Replace("\"", "\"\"") + "\"";
+            }
+            return field;
+        }
 
         public static DataTable GetDataTableFromCSV(string path)
         {
+
             try
             {
                 DataTable dt = new DataTable();
@@ -54,57 +105,47 @@ namespace Corporate_Financial_Statement_Analyzer
             {
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    DataTable dt = new DataTable();
-                    string[] lines = File.ReadAllLines(ofd.FileName);
-
-                    if (lines.Length == 0) return dt;
-
-                    // Add columns from header
-                    string[] headers = lines[0].Split(',');
-                    foreach (string header in headers)
+                    try
                     {
-                        dt.Columns.Add(header.Trim(), typeof(string)); // or parse type
-                    }
+                        string[] lines = File.ReadAllLines(ofd.FileName);
+                        if (lines.Length == 0) return new DataTable();
 
-                    // Add rows
-                    for (int i = 1; i < lines.Length; i++)
+                        DataTable dt = new DataTable();
+                        string[] headers = lines[0].Split(',');
+                        foreach (string header in headers)
+                        {
+                            dt.Columns.Add(header.Trim());
+                        }
+
+                        for (int i = 1; i < lines.Length; i++)
+                        {
+                            string[] fields = lines[i].Split(new char[] { ',' }, StringSplitOptions.None);
+
+                            // 🔧 Critical fix: ensure fields length matches columns
+                            Array.Resize(ref fields, dt.Columns.Count); // pads with null if too short, truncates if too long
+
+                            // Convert nulls to empty strings for safety
+                            for (int j = 0; j < fields.Length; j++)
+                            {
+                                fields[j] = fields[j]?.Trim() ?? "";
+                            }
+
+                            dt.Rows.Add(fields);
+                        }
+
+                        return dt;
+                    }
+                    catch (Exception ex)
                     {
-                        string[] fields = lines[i].Split(new char[] { ',' }, StringSplitOptions.None);
-                        dt.Rows.Add(fields);
+                        MessageBox.Show($"Error loading CSV:\n{ex.Message}", "Load Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return new DataTable();
                     }
-
-                    return dt;
                 }
             }
             return new DataTable();
         }
 
-
-        public static void SaveDataGridViewToCSV(string path)
-        {
-            using(StreamWriter sw = new StreamWriter(path))
-            {
-                //add to the save button 
-            }
-        }
-
-
-        //public void LoadCSV(string fileType)
-        //{
-        //    CSVLoader loader = new CSVLoader();
-        //    switch (fileType)
-        //    {
-        //        case "BalanceSheet":
-        //            dataGridView1.DataSource = loader.LoadBalanceSheetCSV();
-        //            break;
-        //        case "IncomeStatement":
-        //            dataGridView1.DataSource = loader.LoadIncomeStatementCSV();
-        //            break;
-        //        case "CashFlow":
-        //            dataGridView1.DataSource = loader.LoadCashFlowCSV();
-        //            break;
-        //    }
-        //}
 
     }
 
