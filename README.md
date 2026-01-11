@@ -36,3 +36,4 @@ Financing Cash Flow
 <img width="1130" height="588" alt="image" src="https://github.com/user-attachments/assets/aad3f81f-b887-497d-8390-e97f6ded61dc" />
 <img width="1145" height="588" alt="image" src="https://github.com/user-attachments/assets/ca35987c-31f9-4d70-8030-1362c37f64e5" />
 <img width="1134" height="587" alt="image" src="https://github.com/user-attachments/assets/e8a3bb39-e07f-4102-983c-889431737b9d" />
+<img width="1132" height="610" alt="image" src="https://github.com/user-attachments/assets/139b6516-38bf-48d6-a261-65051c7d4ebd" />
